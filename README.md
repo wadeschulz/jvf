@@ -6,27 +6,19 @@ JSON represenation of genomic variants for use in web services and document-orie
 # Document URIs
 Used to identify specific organizations/laboratories using a reverse FQDN.
 
-OrganizationUri:
-	/organization/org.ynhh.labmed
-	/organization/org.ynhh.pathology
+OrganizationUri example: /organization/org.ynhh.labmed
 	
-SubjectURI: 
-  External: /subject/orgid/identifier
+SubjectURI: /subject/orgid/identifier
   
-SpecimenURI:
-	Lab medicine: /specimen/orgid/caseid
+SpecimenURI: /specimen/orgid/caseid
 	
-PanelURI:
-	AML: /panel/orgid/panelid/YEARDEVELOPED
+PanelURI: /panel/orgid/panelid/YEARDEVELOPED
 	
-SpecimenCat:
-	tumor
-	germline
+SpecimenCat: tumor, germline
 	
-InstrumentType:
-	/instrument/iontorrent/pgm
-	/instrument/illumina/hiseq
-	/instrument/illumina/miseq
+InstrumentType: <br />
+	&nbsp;&nbsp;&nbsp;&nbsp;/instrument/iontorrent/pgm<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;/instrument/illumina/hiseq<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;/instrument/illumina/miseq
 	
-PipelineUri:
-	/pipeline/orgid/yourpipelineid
+PipelineUri: /pipeline/orgid/yourpipelineid
