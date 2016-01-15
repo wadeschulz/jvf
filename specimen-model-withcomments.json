@@ -6,6 +6,7 @@
 	'germline_specimen_uri':string, // uri for paired germline if present (is_germline_specimen=false)
 	'specimen_uri':string, // uri generated for specimen -- site + specimen id
 	'panel_uri':string, // uri for panel that was run -- whole genome, exome, target (aml/mds, oncoplex, etc). will pair to BED file
+	'vcf_file':string, // vcf file in base64
 	'file_hash':string, // hash of original vcf or jvf to validate file source in future if necessary
 	'order_dx':string, // uri? icd?
 	'order_dx_cat':string, // mirror COSMIC - heme, gi, etc
