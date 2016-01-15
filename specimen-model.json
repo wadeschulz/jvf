@@ -6,6 +6,7 @@
 	'germline_specimen_uri':string,
 	'specimen_uri':string,
 	'panel_uri':string,
+	'vcf_file':string,
 	'file_hash':string,
 	'order_dx':string,
 	'order_dx_cat':string,
