@@ -1,121 +1,113 @@
 {
-	'subject_uri':string, // uri generated for subject/patient -- site + subject id
-	'subject_days_old_at_collection':int, // subject/patient age at time of specimen collection in days
-	'subject_dob':datetime, // DOB for any calculations that need it but cannot use days_old_at_collection
-	'parental_specimen_uris':[string], // uri for parental specimens if paired
-	'germline_specimen_uri':string, // uri for paired germline if present (is_germline_specimen=false)
-	'specimen_uri':string, // uri generated for specimen -- site + specimen id
-	'panel_uri':string, // uri for panel that was run -- whole genome, exome, target (aml/mds, oncoplex, etc). will pair to BED file
-	'vcf_file':string, // vcf file in base64
-	'file_hash':string, // hash of original vcf or jvf to validate file source in future if necessary
-	'order_dx':string, // uri? icd?
-	'order_dx_cat':string, // mirror COSMIC - heme, gi, etc
-	'specimen_type':string, // mirror COSMIC
-	'therapy_relationship':string, // untreated, day 28, etc
-	'sample_differentiator':string, // primary, metastatic
-	'specimen_cat':string, // germline, tumor
-	'specimen_site':string, // ICDO
-	'specimen_subsite':string, // cosmic if needed?
-	'specimen_histology':string,
-	'specimen_histology_subtype':string,
-	'collected_date':datetime, // specimen or biopsy collected
-	'preparation_date':datetime, // date of isolation/laser capture/etc
-	'sequenced_date':datetime, // date of sequencing run
-	'interped_date':datetime,
-	'instrument_type':string, // hiseq, PGM, etc - will be provided list of URIs
-	'seq_method':string, // paired end, mate pair, etc
-	'pipeline_uri':string,
-	'ref_genome':string, // hg19, hg20, etc
-	'is_clinical_specimen':bool,
-	'is_germline_specimen':bool,
-	'is_history_complete':bool,
-	'estimated_tumor_fraction':double, // estimated percentage of tumor in specimen 
-	'estimated_necrosis_fraction':double, // estimated percentage necrosis
-	'specimen_description':string, // spec description
-	'ploidy_threshold':double,
-	'tumor_freq_threshold':double,
-	'regions_covered':[ // bed coverage list
+	"subject_uri":string, // uri generated for subject/patient -- site + subject id
+	"subject_days_old_at_collection":int, // subject/patient age at time of specimen collection in days
+	"subject_dob":datetime, // DOB for any calculations that need it but cannot use days_old_at_collection
+	"parental_specimen_uris":[string], // uri for parental specimens if paired
+	"germline_specimen_uri":string, // uri for paired germline if present (is_germline_specimen=false)
+	"specimen_uri":string, // uri generated for specimen -- site + specimen id
+	"panel_uri":string, // uri for panel that was run -- whole genome, exome, target (aml/mds, oncoplex, etc). will pair to BED file
+	"vcf_file":string, // vcf file in base64
+	"file_hash":string, // hash of original vcf or jvf to validate file source in future if necessary
+	"order_dx":string, // uri? icd?
+	"order_dx_cat":string, // mirror COSMIC - heme, gi, etc
+	"specimen_type":string, // mirror COSMIC
+	"therapy_relationship":string, // untreated, day 28, etc
+	"sample_differentiator":string, // primary, metastatic
+	"specimen_cat":string, // germline, tumor
+	"specimen_site":string, // ICDO
+	"specimen_subsite":string, // cosmic if needed?
+	"specimen_histology":string,
+	"specimen_histology_subtype":string,
+	"collected_date":datetime, // specimen or biopsy collected
+	"preparation_date":datetime, // date of isolation/laser capture/etc
+	"sequenced_date":datetime, // date of sequencing run
+	"interped_date":datetime,
+	"instrument_type":string, // hiseq, PGM, etc - will be provided list of URIs
+	"seq_method":string, // paired end, mate pair, etc
+	"pipeline_uri":string,
+	"ref_genome":string, // hg19, hg20, etc
+	"is_clinical_specimen":bool,
+	"is_germline_specimen":bool,
+	"is_history_complete":bool,
+	"estimated_tumor_fraction":double, // estimated percentage of tumor in specimen 
+	"estimated_necrosis_fraction":double, // estimated percentage necrosis
+	"specimen_description":string, // spec description
+	"ploidy_threshold":double,
+	"tumor_freq_threshold":double,
+	"regions_covered":[ // bed coverage list
 		{
-			'chr':string,
-			'start':int,
-			'end':int
+			"chr":string,
+			"start":int,
+			"end":int
 		}
 	],
-	'research_source':string, // uri if from research study
-	'notes':string, // user-supplied comments for specimen
-	'interpretation':string, // pathology interp/synoptic interp for entire specimen
-	'total_variants':int,
-	'total_reported_variants':int,
-	'germline_variants':int, // if known
-	'somatic_variants':int, // if known
-	'variant_locations':[
+	"research_source":string, // uri if from research study
+	"notes":string, // user-supplied comments for specimen
+	"interpretation":string, // pathology interp/synoptic interp for entire specimen
+	"total_variants":int,
+	"total_reported_variants":int,
+	"total_germline_variants":int, // if known
+	"total_somatic_variants":int, // if known
+	"variants":[
 		{
-			'chr':string,
-			'loc':int,
-			'ref_allele':string,
-			'alt_alleles':[string]
-		}
-	],
-	'variants':[
-		{
-			'specimen_uri':string,
+			"specimen_uri":string,
 			// variant-specific information
-			'ref_genome':string, // duplicate of what is in specimen, but useful for subset queries
-			'chr':string, // string to all X, Y, MT along with 1-22
-			'loc':int, // integer genomic coords
-			'rsid':string, // if provided, rsid
-			'ref':string, // reference allele
-			'num_alt_alleles':int,
+			"ref_genome":string, // duplicate of what is in specimen, but useful for subset queries
+			"chr":string, // string to all X, Y, MT along with 1-22
+			"loc":int, // integer genomic coords
+			"rsid":string, // if provided, rsid
+			"ref":string, // reference allele
+			"num_alt_alleles":int,
 			// allele-specific information - denormalize into separate records for each alt allele
-			'alt':string, // alternate allele
+			"alt":string, // alternate allele
 			// quality data
-			'qual':int, // phred quality score
-			'filter':string, // filter status
+			"qual":int, // phred quality score
+			"filter":string, // filter status
 
 			// coverage information, if available
-			'depth':int, // read depth
-			'reads_forw':int, // total forward strand reads
-			'reads_rev':int, // total reverse strand reads
-			'reads_ref':int, // total reference allele reads
-			'reads_ref_forw':int, // reference allele reverse strand reads
-			'reads_ref_rev':int, // reference allele reverse strand reads
-			'reads_alt':int, // total alt allele reads
-			'reads_alt_forw':int, // alt allele reverse strand reads
-			'reads_alt_rev':int, // alt allele reverse strand reads
-			'strand_bias_forw':double, // forward strand bias
-			'strand_bias_rev':double, // reverse strand bias
-			'strand_bias':double, // strand bias
+			"depth":int, // read depth
+			"reads_forw":int, // total forward strand reads
+			"reads_rev":int, // total reverse strand reads
+			"reads_ref":int, // total reference allele reads
+			"reads_ref_forw":int, // reference allele reverse strand reads
+			"reads_ref_rev":int, // reference allele reverse strand reads
+			"reads_alt":int, // total alt allele reads
+			"reads_alt_forw":int, // alt allele reverse strand reads
+			"reads_alt_rev":int, // alt allele reverse strand reads
+			"strand_bias_forw":double, // forward strand bias
+			"strand_bias_rev":double, // reverse strand bias
+			"strand_bias":double, // strand bias
 			// flow evaluator depths from PGM data
-			'depth_flow':int, // read depth
-			'reads_forw_flow':int, // total forward strand reads
-			'reads_rev_flow':int, // total reverse strand reads
-			'reads_ref_flow':int, // total reference allele reads
-			'reads_ref_forw_flow':int, // reference allele reverse strand reads
-			'reads_ref_rev_flow':int, // reference allele reverse strand reads
-			'reads_alt_flow':int, // total alt allele reads
-			'reads_alt_forw_flow':int, // alt allele reverse strand reads
-			'reads_alt_rev_flow':int, // alt allele reverse strand reads
+			"depth_flow":int, // read depth
+			"reads_forw_flow":int, // total forward strand reads
+			"reads_rev_flow":int, // total reverse strand reads
+			"reads_ref_flow":int, // total reference allele reads
+			"reads_ref_forw_flow":int, // reference allele reverse strand reads
+			"reads_ref_rev_flow":int, // reference allele reverse strand reads
+			"reads_alt_flow":int, // total alt allele reads
+			"reads_alt_forw_flow":int, // alt allele reverse strand reads
+			"reads_alt_rev_flow":int, // alt allele reverse strand reads
 
 			// more important to have this than raw read data above
-			'af_total':double, // calculated allelic fraction (total for colocated variants)
-			'af_specific':double, // calculated allelic frequency for this specific alt allele
+			"af_total":double, // calculated allelic fraction (total for colocated variants)
+			"af_specific":double, // calculated allelic frequency for this specific alt allele
 
 			// variant annotation
 			// need standard method to provide annotation info, IonReporter is crap for this
 			// will again be a part of the above array or denomarlized per alt allele
-			'varType':string, // snv, indel
-			'varGeneRegion':string, // intron, exon, splicesite
-			'varEffect':string, // synon, missense, frameshift
-			'gene':string, // gene cards symbol
-			'transcript':string, // refseq? ensembl?
-			'exon':int,
-			'hgvsProtein':string,
-			'hgvsCoding':string,
+			"varType":string, // snv, indel
+			"varGeneRegion":string, // intron, exon, splicesite
+			"varEffect":string, // synon, missense, frameshift
+			"gene":string, // gene cards symbol
+			"transcript":string, // refseq? ensembl?
+			"exon":int,
+			"hgvsProtein":string,
+			"hgvsCoding":string,
 
-			'is_actionable':bool, // decided by interp lab/pathologist
-			'interpretation':string, // path interpretation
-			'notes':string, // internal interp comments
-			'somatic_status':string, // validated somatic, reported somatic, germline, unknown
+			"is_actionable":bool, // decided by interp lab/pathologist
+			"interpretation":string, // path interpretation
+			"notes":string, // internal interp comments
+			"somatic_status":string // validated somatic, reported somatic, germline, unknown
 		}
 	]
 }
