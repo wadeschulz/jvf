@@ -183,34 +183,34 @@ namespace HelixDataSci.Genomics
         [JsonProperty(PropertyName = "depth")]
         public int? Depth { get; set; }
 
-        [JsonProperty(PropertyName = "reads_forward")]
+        [JsonProperty(PropertyName = "reads_forw")]
         public int? ReadsForw { get; set; }
 
-        [JsonProperty(PropertyName = "reads_reverse")]
+        [JsonProperty(PropertyName = "reads_rev")]
         public int? ReadsRev { get; set; }
 
         [JsonProperty(PropertyName = "reads_ref_allele")]
         public int? ReadsRef { get; set; }
 
-        [JsonProperty(PropertyName = "reads_ref_forward")]
+        [JsonProperty(PropertyName = "reads_ref_forw")]
         public int? ReadsRefForw { get; set; }
 
-        [JsonProperty(PropertyName = "reads_ref_reverse")]
+        [JsonProperty(PropertyName = "reads_ref_rev")]
         public int? ReadsRefRev { get; set; }
 
         [JsonProperty(PropertyName = "reads_alt_allele")]
         public int? ReadsAlt { get; set; }
 
-        [JsonProperty(PropertyName = "reads_alt_forward")]
+        [JsonProperty(PropertyName = "reads_alt_forw")]
         public int? ReadsAltForw { get; set; }
 
-        [JsonProperty(PropertyName = "reads_alt_reverse")]
+        [JsonProperty(PropertyName = "reads_alt_rev")]
         public int? ReadsAltRev { get; set; }
 
-        [JsonProperty(PropertyName = "strand_bias_forward")]
+        [JsonProperty(PropertyName = "strand_bias_forw")]
         public double? StrandBiasForw { get; set; }
 
-        [JsonProperty(PropertyName = "strand_bias_reverse")]
+        [JsonProperty(PropertyName = "strand_bias_rev")]
         public double? StrandBiasRev { get; set; }
 
         [JsonProperty(PropertyName = "strand_bias")]
@@ -219,28 +219,28 @@ namespace HelixDataSci.Genomics
         [JsonProperty(PropertyName = "flow_depth")]
         public int? FlowDepth { get; set; }
 
-        [JsonProperty(PropertyName = "flow_reads_forward")]
+        [JsonProperty(PropertyName = "flow_reads_forw")]
         public int? FlowReadsForw { get; set; }
 
-        [JsonProperty(PropertyName = "flow_reads_reverse")]
+        [JsonProperty(PropertyName = "flow_reads_rev")]
         public int? FlowReadsRev { get; set; }
 
         [JsonProperty(PropertyName = "flow_reads_ref_allele")]
         public int? FlowReadsRef { get; set; }
 
-        [JsonProperty(PropertyName = "flow_reads_ref_forward")]
+        [JsonProperty(PropertyName = "flow_reads_ref_forw")]
         public int? FlowReadsRefForw { get; set; }
 
-        [JsonProperty(PropertyName = "flow_reads_ref_reverse")]
+        [JsonProperty(PropertyName = "flow_reads_ref_rev")]
         public int? FlowReadsRefRev { get; set; }
 
         [JsonProperty(PropertyName = "flow_reads_alt_allele")]
         public int? FlowReadsAlt { get; set; }
 
-        [JsonProperty(PropertyName = "flow_reads_alt_forward")]
+        [JsonProperty(PropertyName = "flow_reads_alt_forw")]
         public int? FlowReadsAltForw { get; set; }
 
-        [JsonProperty(PropertyName = "flow_reads_alt_reverse")]
+        [JsonProperty(PropertyName = "flow_reads_alt_rev")]
         public int? FlowReadsAltRev { get; set; }
 
         [JsonProperty(PropertyName = "af_total")]
