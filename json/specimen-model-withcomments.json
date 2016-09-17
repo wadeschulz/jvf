@@ -95,9 +95,9 @@
 			// variant annotation
 			// need standard method to provide annotation info, IonReporter is crap for this
 			// will again be a part of the above array or denomarlized per alt allele
-			"varType":string, // snv, indel
-			"varGeneRegion":string, // intron, exon, splicesite
-			"varEffect":string, // synon, missense, frameshift
+			"var_type":string, // snv, indel
+			"var_gene_region":string, // intron, exon, splicesite
+			"var_effect":string, // synon, missense, frameshift
 			"gene":string, // gene cards symbol
 			"transcript":string, // refseq? ensembl?
 			"exon":int,

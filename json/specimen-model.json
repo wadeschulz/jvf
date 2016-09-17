@@ -88,9 +88,9 @@
 			"af_total":double,
 			"af_specific":double,
 
-			"varType":string,
-			"varGeneRegion":string,
-			"varEffect":string,
+			"var_type":string,
+			"var_gene_region":string,
+			"var_effect":string,
 			"gene":string,
 			"transcript":string,
 			"exon":int,
